@@ -16,5 +16,6 @@ namespace PersonalFinanceManager_DesktopApp.Forms
         {
             InitializeComponent();
         }
+
     }
 }

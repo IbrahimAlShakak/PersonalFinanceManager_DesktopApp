@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PersonalFinanceManager_DesktopApp.Forms;
 
 namespace PersonalFinanceManager_DesktopApp
 {
@@ -16,7 +17,7 @@ namespace PersonalFinanceManager_DesktopApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new SettingForm());
         }
     }
 }
