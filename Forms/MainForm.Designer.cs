@@ -38,9 +38,9 @@
             this.lblProgressBar = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.gbTransactions = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMax = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbMin = new System.Windows.Forms.ComboBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
@@ -136,9 +136,9 @@
             // 
             // gbTransactions
             // 
-            this.gbTransactions.Controls.Add(this.comboBox1);
+            this.gbTransactions.Controls.Add(this.cbMax);
             this.gbTransactions.Controls.Add(this.cbCategory);
-            this.gbTransactions.Controls.Add(this.comboBox2);
+            this.gbTransactions.Controls.Add(this.cbMin);
             this.gbTransactions.Controls.Add(this.btnFilter);
             this.gbTransactions.Controls.Add(this.label3);
             this.gbTransactions.Controls.Add(this.listView);
@@ -149,26 +149,27 @@
             this.gbTransactions.TabStop = false;
             this.gbTransactions.Text = "Transactions";
             // 
-            // comboBox1
+            // cbMax
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbMax.FormattingEnabled = true;
+            this.cbMax.Items.AddRange(new object[] {
             "None",
             "50",
             "100",
             "250",
             "500",
             "1000"});
-            this.comboBox1.Location = new System.Drawing.Point(413, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(104, 32);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "Max";
+            this.cbMax.Location = new System.Drawing.Point(413, 39);
+            this.cbMax.Name = "cbMax";
+            this.cbMax.Size = new System.Drawing.Size(104, 32);
+            this.cbMax.TabIndex = 7;
+            this.cbMax.Text = "Max";
             // 
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Items.AddRange(new object[] {
+            "All",
             "Salary",
             "Freelance",
             "Groceries",
@@ -185,21 +186,21 @@
             this.cbCategory.TabIndex = 5;
             this.cbCategory.Text = "Category";
             // 
-            // comboBox2
+            // cbMin
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbMin.FormattingEnabled = true;
+            this.cbMin.Items.AddRange(new object[] {
             "None",
             "50",
             "100",
             "250",
             "500",
             "1000"});
-            this.comboBox2.Location = new System.Drawing.Point(523, 39);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(104, 32);
-            this.comboBox2.TabIndex = 4;
-            this.comboBox2.Text = "Min";
+            this.cbMin.Location = new System.Drawing.Point(523, 39);
+            this.cbMin.Name = "cbMin";
+            this.cbMin.Size = new System.Drawing.Size(104, 32);
+            this.cbMin.TabIndex = 4;
+            this.cbMin.Text = "Min";
             // 
             // btnFilter
             // 
@@ -211,6 +212,7 @@
             this.btnFilter.TabIndex = 2;
             this.btnFilter.Text = "Filter....";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // label3
             // 
@@ -359,9 +361,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMax;
         private System.Windows.Forms.ComboBox cbCategory;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbMin;
         private System.Windows.Forms.Button btnSetting;
     }
 }

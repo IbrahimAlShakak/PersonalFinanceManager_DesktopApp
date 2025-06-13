@@ -94,6 +94,26 @@ namespace PersonalFinanceManager_DesktopApp
             lblProgressBar.Text = $"${income} / ${FinancialGoal}";
 
         }
+        private void GetFilteredTransaction()
+        {
+            var filteredTransactions = Transactions.Where(t =>
+            (cbCategory.SelectedItem == null || cbCategory.SelectedItem.ToString() == "All" || t.Category == cbCategory.SelectedItem.ToString()) &&
+            (cbMin.SelectedItem == null || cbMin.SelectedItem.ToString() == "None" || t.Amount >= float.Parse(cbMin.SelectedItem.ToString())) &&
+            (cbMax.SelectedItem == null || cbMax.SelectedItem.ToString() == "None" || t.Amount <= float.Parse(cbMax.SelectedItem.ToString()))).ToList();
+
+
+            listView.Items.Clear();
+
+            foreach (var transaction in filteredTransactions)
+            {
+                ListViewItem item = new ListViewItem(transaction.Date.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(transaction.Category);
+                item.SubItems.Add(transaction.Description);
+                item.SubItems.Add(transaction.Amount.ToString());
+                listView.Items.Add(item);
+            }
+
+        }
         public MainForm()
         {
             InitializeComponent();
@@ -102,5 +122,9 @@ namespace PersonalFinanceManager_DesktopApp
             UpdateFinancialGolas();
         }
 
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            GetFilteredTransaction();
+        }
     }
 }
