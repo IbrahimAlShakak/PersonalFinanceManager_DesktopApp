@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gbDashboard = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblBalance = new System.Windows.Forms.Label();
             this.lblIncome = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbFinancialGoals = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblProgressBar = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.gbTransactions = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listView = new System.Windows.Forms.ListView();
             this.chDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnViewReport = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnSetting = new System.Windows.Forms.Button();
             this.gbDashboard.SuspendLayout();
             this.gbFinancialGoals.SuspendLayout();
@@ -72,23 +72,14 @@
             this.gbDashboard.TabStop = false;
             this.gbDashboard.Text = "Dashboard";
             // 
-            // label1
+            // lblIncome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Balance:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Income:";
+            this.lblIncome.AutoSize = true;
+            this.lblIncome.Location = new System.Drawing.Point(258, 76);
+            this.lblIncome.Name = "lblIncome";
+            this.lblIncome.Size = new System.Drawing.Size(61, 25);
+            this.lblIncome.TabIndex = 3;
+            this.lblIncome.Text = "$0.00";
             // 
             // lblBalance
             // 
@@ -99,19 +90,28 @@
             this.lblBalance.TabIndex = 2;
             this.lblBalance.Text = "$0.00";
             // 
-            // lblIncome
+            // label2
             // 
-            this.lblIncome.AutoSize = true;
-            this.lblIncome.Location = new System.Drawing.Point(258, 76);
-            this.lblIncome.Name = "lblIncome";
-            this.lblIncome.Size = new System.Drawing.Size(61, 25);
-            this.lblIncome.TabIndex = 3;
-            this.lblIncome.Text = "$0.00";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Income:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Balance:";
             // 
             // gbFinancialGoals
             // 
             this.gbFinancialGoals.Controls.Add(this.lblProgressBar);
-            this.gbFinancialGoals.Controls.Add(this.progressBar1);
+            this.gbFinancialGoals.Controls.Add(this.progressBar);
             this.gbFinancialGoals.Location = new System.Drawing.Point(391, 12);
             this.gbFinancialGoals.Name = "gbFinancialGoals";
             this.gbFinancialGoals.Size = new System.Drawing.Size(510, 117);
@@ -119,20 +119,20 @@
             this.gbFinancialGoals.TabStop = false;
             this.gbFinancialGoals.Text = "Financial Goals";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(20, 42);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(484, 23);
-            this.progressBar1.TabIndex = 0;
-            // 
             // lblProgressBar
             // 
-            this.lblProgressBar.Location = new System.Drawing.Point(355, 76);
+            this.lblProgressBar.Location = new System.Drawing.Point(15, 76);
             this.lblProgressBar.Name = "lblProgressBar";
-            this.lblProgressBar.Size = new System.Drawing.Size(149, 23);
+            this.lblProgressBar.Size = new System.Drawing.Size(489, 23);
             this.lblProgressBar.TabIndex = 1;
             this.lblProgressBar.Text = "$0 / $0.00";
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(20, 42);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(484, 23);
+            this.progressBar.TabIndex = 0;
             // 
             // gbTransactions
             // 
@@ -141,48 +141,76 @@
             this.gbTransactions.Controls.Add(this.comboBox2);
             this.gbTransactions.Controls.Add(this.btnFilter);
             this.gbTransactions.Controls.Add(this.label3);
-            this.gbTransactions.Controls.Add(this.listView1);
+            this.gbTransactions.Controls.Add(this.listView);
             this.gbTransactions.Location = new System.Drawing.Point(12, 135);
             this.gbTransactions.Name = "gbTransactions";
-            this.gbTransactions.Size = new System.Drawing.Size(743, 457);
+            this.gbTransactions.Size = new System.Drawing.Size(766, 457);
             this.gbTransactions.TabIndex = 5;
             this.gbTransactions.TabStop = false;
             this.gbTransactions.Text = "Transactions";
             // 
-            // listView1
+            // comboBox1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chDate,
-            this.chCategory,
-            this.chDescription,
-            this.chAmount});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 81);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(737, 370);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "None",
+            "50",
+            "100",
+            "250",
+            "500",
+            "1000"});
+            this.comboBox1.Location = new System.Drawing.Point(413, 39);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(104, 32);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "Max";
             // 
-            // chDate
+            // cbCategory
             // 
-            this.chDate.Text = "Date";
-            this.chDate.Width = 150;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Items.AddRange(new object[] {
+            "Salary",
+            "Freelance",
+            "Groceries",
+            "Transport",
+            "Dining",
+            "Utilities",
+            "Entertainment",
+            "Health",
+            "Shopping",
+            "Rent"});
+            this.cbCategory.Location = new System.Drawing.Point(202, 39);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(205, 32);
+            this.cbCategory.TabIndex = 5;
+            this.cbCategory.Text = "Category";
             // 
-            // chCategory
+            // comboBox2
             // 
-            this.chCategory.Text = "Category";
-            this.chCategory.Width = 200;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "None",
+            "50",
+            "100",
+            "250",
+            "500",
+            "1000"});
+            this.comboBox2.Location = new System.Drawing.Point(523, 39);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(104, 32);
+            this.comboBox2.TabIndex = 4;
+            this.comboBox2.Text = "Min";
             // 
-            // chDescription
+            // btnFilter
             // 
-            this.chDescription.Text = "Description";
-            this.chDescription.Width = 200;
-            // 
-            // chAmount
-            // 
-            this.chAmount.Text = "Amount";
-            this.chAmount.Width = 200;
+            this.btnFilter.AutoSize = true;
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.Location = new System.Drawing.Point(633, 28);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(127, 36);
+            this.btnFilter.TabIndex = 2;
+            this.btnFilter.Text = "Filter....";
+            this.btnFilter.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -193,9 +221,44 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Transactions History";
             // 
+            // listView
+            // 
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chDate,
+            this.chCategory,
+            this.chDescription,
+            this.chAmount});
+            this.listView.HideSelection = false;
+            this.listView.Location = new System.Drawing.Point(0, 81);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(760, 370);
+            this.listView.TabIndex = 0;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
+            // 
+            // chDate
+            // 
+            this.chDate.Text = "Date";
+            this.chDate.Width = 80;
+            // 
+            // chCategory
+            // 
+            this.chCategory.Text = "Category";
+            this.chCategory.Width = 80;
+            // 
+            // chDescription
+            // 
+            this.chDescription.Text = "Description";
+            this.chDescription.Width = 150;
+            // 
+            // chAmount
+            // 
+            this.chAmount.Text = "Amount";
+            this.chAmount.Width = 100;
+            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(761, 145);
+            this.btnAdd.Location = new System.Drawing.Point(784, 135);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(140, 38);
             this.btnAdd.TabIndex = 6;
@@ -204,7 +267,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(761, 204);
+            this.btnEdit.Location = new System.Drawing.Point(784, 194);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(140, 38);
             this.btnEdit.TabIndex = 7;
@@ -213,7 +276,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(761, 263);
+            this.btnDelete.Location = new System.Drawing.Point(784, 253);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(140, 38);
             this.btnDelete.TabIndex = 8;
@@ -222,7 +285,7 @@
             // 
             // btnViewReport
             // 
-            this.btnViewReport.Location = new System.Drawing.Point(761, 322);
+            this.btnViewReport.Location = new System.Drawing.Point(784, 312);
             this.btnViewReport.Name = "btnViewReport";
             this.btnViewReport.Size = new System.Drawing.Size(140, 38);
             this.btnViewReport.TabIndex = 9;
@@ -231,53 +294,16 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(761, 444);
+            this.btnExit.Location = new System.Drawing.Point(784, 434);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(140, 38);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // btnFilter
-            // 
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Location = new System.Drawing.Point(633, 39);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(104, 33);
-            this.btnFilter.TabIndex = 2;
-            this.btnFilter.Text = "Filter....";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(523, 39);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(104, 32);
-            this.comboBox2.TabIndex = 4;
-            this.comboBox2.Text = "Min";
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(202, 39);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(205, 32);
-            this.cbCategory.TabIndex = 5;
-            this.cbCategory.Text = "Category";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(413, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(104, 32);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "Max";
-            // 
             // btnSetting
             // 
-            this.btnSetting.Location = new System.Drawing.Point(761, 383);
+            this.btnSetting.Location = new System.Drawing.Point(784, 373);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(140, 38);
             this.btnSetting.TabIndex = 11;
@@ -318,10 +344,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbFinancialGoals;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label lblProgressBar;
         private System.Windows.Forms.GroupBox gbTransactions;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView;
         public System.Windows.Forms.ColumnHeader chDate;
         public System.Windows.Forms.ColumnHeader chCategory;
         private System.Windows.Forms.ColumnHeader chDescription;
