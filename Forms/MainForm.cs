@@ -17,6 +17,7 @@ namespace PersonalFinanceManager_DesktopApp
     public partial class MainForm : Form
     {
         List<Transaction> Transactions = new List<Transaction>();
+        private string _Currency = "$";
 
         private void GetTransactions()
         {
@@ -79,8 +80,8 @@ namespace PersonalFinanceManager_DesktopApp
             float expenses = GetExpenses();
             float balance = income - expenses;
 
-            lblBalance.Text = $"${balance:0.00}";
-            lblIncome.Text = $"${income:0.00}";
+            lblBalance.Text = $"{_Currency}{balance:0.00}";
+            lblIncome.Text = $"{_Currency}{income:0.00}";
         }
         private void UpdateFinancialGolas()
         {
@@ -92,7 +93,7 @@ namespace PersonalFinanceManager_DesktopApp
             progressBar.Maximum = FinancialGoal;
             progressBar.Value = (int)balance;
 
-            lblProgressBar.Text = $"${balance} / ${FinancialGoal}";
+            lblProgressBar.Text = $"{_Currency}{balance} / {_Currency}{FinancialGoal}";
 
         }
         private void GetFilteredTransaction()
@@ -116,7 +117,6 @@ namespace PersonalFinanceManager_DesktopApp
             }
 
         }
-
         private void AddNewTransaction()
         {
             int lastId = Transactions.Any() ? Transactions.Max(t => t.Id) : 0;
@@ -131,6 +131,18 @@ namespace PersonalFinanceManager_DesktopApp
                 UpdateFinancialGolas();
             }
         }
+        private void GetCurrencyChange()
+        {
+            SettingForm settingForm = new SettingForm();
+            if (settingForm.ShowDialog() == DialogResult.OK)
+            {
+                _Currency = settingForm.Currency;
+                UpdateDashboard();
+                UpdateFinancialGolas();
+            }
+
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -145,6 +157,11 @@ namespace PersonalFinanceManager_DesktopApp
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddNewTransaction();
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            GetCurrencyChange();
         }
     }
 }

@@ -306,6 +306,7 @@
             this.btnSetting.TabIndex = 11;
             this.btnSetting.Text = "Settings";
             this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // chID
             // 
