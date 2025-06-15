@@ -90,6 +90,17 @@
             // cbCategoryTransaction
             // 
             this.cbCategoryTransaction.FormattingEnabled = true;
+            this.cbCategoryTransaction.Items.AddRange(new object[] {
+            "Salary",
+            "Freelance",
+            "Groceries",
+            "Transport",
+            "Dining",
+            "Utilities",
+            "Entertainment",
+            "Health",
+            "Shopping",
+            "Rent"});
             this.cbCategoryTransaction.Location = new System.Drawing.Point(176, 66);
             this.cbCategoryTransaction.Name = "cbCategoryTransaction";
             this.cbCategoryTransaction.Size = new System.Drawing.Size(259, 32);

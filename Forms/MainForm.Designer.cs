@@ -44,16 +44,17 @@
             this.btnFilter = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
-            this.chDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnViewReport = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
+            this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbDashboard.SuspendLayout();
             this.gbFinancialGoals.SuspendLayout();
             this.gbTransactions.SuspendLayout();
@@ -238,10 +239,11 @@
             // listView
             // 
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chID,
             this.chDate,
             this.chCategory,
             this.chDescription,
-            this.chAmount});
+            this.columnHeader5});
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(0, 81);
             this.listView.Name = "listView";
@@ -249,26 +251,6 @@
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
-            // 
-            // chDate
-            // 
-            this.chDate.Text = "Date";
-            this.chDate.Width = 80;
-            // 
-            // chCategory
-            // 
-            this.chCategory.Text = "Category";
-            this.chCategory.Width = 80;
-            // 
-            // chDescription
-            // 
-            this.chDescription.Text = "Description";
-            this.chDescription.Width = 150;
-            // 
-            // chAmount
-            // 
-            this.chAmount.Text = "Amount";
-            this.chAmount.Width = 100;
             // 
             // btnAdd
             // 
@@ -278,6 +260,7 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add....";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -324,6 +307,31 @@
             this.btnSetting.Text = "Settings";
             this.btnSetting.UseVisualStyleBackColor = true;
             // 
+            // chID
+            // 
+            this.chID.Text = "ID";
+            this.chID.Width = 40;
+            // 
+            // chDate
+            // 
+            this.chDate.Text = "Date";
+            this.chDate.Width = 80;
+            // 
+            // chCategory
+            // 
+            this.chCategory.Text = "Category";
+            this.chCategory.Width = 80;
+            // 
+            // chDescription
+            // 
+            this.chDescription.Text = "Description";
+            this.chDescription.Width = 140;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Amount";
+            this.columnHeader5.Width = 100;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -362,10 +370,6 @@
         private System.Windows.Forms.Label lblProgressBar;
         private System.Windows.Forms.GroupBox gbTransactions;
         private System.Windows.Forms.ListView listView;
-        public System.Windows.Forms.ColumnHeader chDate;
-        public System.Windows.Forms.ColumnHeader chCategory;
-        private System.Windows.Forms.ColumnHeader chDescription;
-        public System.Windows.Forms.ColumnHeader chAmount;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
@@ -377,6 +381,11 @@
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.ComboBox cbMin;
         private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.ColumnHeader chID;
+        private System.Windows.Forms.ColumnHeader chDate;
+        private System.Windows.Forms.ColumnHeader chCategory;
+        private System.Windows.Forms.ColumnHeader chDescription;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 

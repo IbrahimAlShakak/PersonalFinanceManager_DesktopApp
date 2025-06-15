@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PersonalFinanceManager_DesktopApp.Models;
 using System.Text.Json;
+using PersonalFinanceManager_DesktopApp.Forms;
 
 namespace PersonalFinanceManager_DesktopApp
 {
@@ -32,7 +33,6 @@ namespace PersonalFinanceManager_DesktopApp
 
             File.WriteAllText("transactions_sample.json", dataToJson);
         }
-
         private void LoadTransactions()
         {
             GetTransactions();
@@ -40,7 +40,8 @@ namespace PersonalFinanceManager_DesktopApp
 
             foreach (var transaction in Transactions)
             {
-                ListViewItem item = new ListViewItem(transaction.Date.ToString("dd/MM/yyyy"));
+                ListViewItem item = new ListViewItem(transaction.Id.ToString());
+                item.SubItems.Add(transaction.Date.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(transaction.Category);
                 item.SubItems.Add(transaction.Description);
                 item.SubItems.Add(transaction.Amount.ToString());
@@ -48,7 +49,6 @@ namespace PersonalFinanceManager_DesktopApp
             }
 
         }
-
         private float GetIncome()
         {
             if (Transactions.Count < 1) return 0f;
@@ -82,7 +82,6 @@ namespace PersonalFinanceManager_DesktopApp
             lblBalance.Text = $"${balance:0.00}";
             lblIncome.Text = $"${income:0.00}";
         }
-
         private void UpdateFinancialGolas()
         {
             int FinancialGoal = 100000;
@@ -106,13 +105,20 @@ namespace PersonalFinanceManager_DesktopApp
 
             foreach (var transaction in filteredTransactions)
             {
-                ListViewItem item = new ListViewItem(transaction.Date.ToString("dd/MM/yyyy"));
+                ListViewItem item = new ListViewItem(transaction.Id.ToString());
+                item.SubItems.Add(transaction.Date.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(transaction.Category);
                 item.SubItems.Add(transaction.Description);
                 item.SubItems.Add(transaction.Amount.ToString());
                 listView.Items.Add(item);
             }
 
+        }
+
+        private void AddNewTransaction()
+        {
+            AddTransactionForm addTransactionForm = new AddTransactionForm();
+            addTransactionForm.ShowDialog();
         }
         public MainForm()
         {
@@ -121,10 +127,13 @@ namespace PersonalFinanceManager_DesktopApp
             UpdateDashboard();
             UpdateFinancialGolas();
         }
-
         private void btnFilter_Click(object sender, EventArgs e)
         {
             GetFilteredTransaction();
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddNewTransaction();
         }
     }
 }
