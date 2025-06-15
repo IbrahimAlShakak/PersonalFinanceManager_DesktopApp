@@ -140,9 +140,49 @@ namespace PersonalFinanceManager_DesktopApp
                 UpdateDashboard();
                 UpdateFinancialGolas();
             }
+        }
+        private void EditOrDelete(string selectedId)
+        {
+
+            EditOrDeleteForm editOrDeleteForm = new EditOrDeleteForm(Convert.ToInt32(selectedId));
+
+            if (editOrDeleteForm.ShowDialog() == DialogResult.OK)
+            {
+                switch(editOrDeleteForm.UserAction)
+                {
+                    case "Edit":
+                        {
+                            if (MessageBox.Show("Are you sure to edit this transaction record ?", "Confirm Edit", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                            {
+                                var editedTransactionIndex = Transactions.FindIndex(t => t.Id == editOrDeleteForm.EditedTransaction.Id);
+                                if (editedTransactionIndex != -1)
+                                {
+                                    Transactions[editedTransactionIndex] = editOrDeleteForm.EditedTransaction;
+                                    SaveTransactions();
+                                }
+                            }
+                            break;
+                        }
+                    case "Delete":
+                        {
+                            if(MessageBox.Show("Are you sure to delete this transaction record ?", "Confirm Deletion", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                            {
+                                int deleteIndex = Transactions.FindIndex(t => t.Id == Convert.ToInt32(selectedId));
+                                if (deleteIndex != -1)
+                                {
+                                    Transactions.RemoveAt(deleteIndex);
+                                    SaveTransactions();
+                                }
+
+                            }
+                            break;
+                        }
+                    default: { break; }
+                }
+            }
+
 
         }
-
         public MainForm()
         {
             InitializeComponent();
@@ -158,10 +198,29 @@ namespace PersonalFinanceManager_DesktopApp
         {
             AddNewTransaction();
         }
-
         private void btnSetting_Click(object sender, EventArgs e)
         {
             GetCurrencyChange();
+        }
+
+        private void listView_ItemActivate(object sender, EventArgs e)
+        {
+            if (listView.SelectedItems.Count == 0) return;
+
+            var selectedItem = listView.SelectedItems[0];
+            string selectedId = selectedItem.SubItems[0].Text;
+
+            EditOrDelete(selectedId);
+
+            LoadTransactions();
+            UpdateDashboard();
+            UpdateFinancialGolas();
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

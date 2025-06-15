@@ -83,6 +83,12 @@
     <Compile Include="Forms\AddTransactionForm.Designer.cs">
       <DependentUpon>AddTransactionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditOrDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditOrDeleteForm.Designer.cs">
+      <DependentUpon>EditOrDeleteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +101,14 @@
     <Compile Include="Forms\SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\FileHandler.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddTransactionForm.resx">
       <DependentUpon>AddTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditOrDeleteForm.resx">
+      <DependentUpon>EditOrDeleteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

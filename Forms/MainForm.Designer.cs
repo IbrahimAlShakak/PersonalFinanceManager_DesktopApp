@@ -44,17 +44,14 @@
             this.btnFilter = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnViewReport = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnSetting = new System.Windows.Forms.Button();
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.gbDashboard.SuspendLayout();
             this.gbFinancialGoals.SuspendLayout();
             this.gbTransactions.SuspendLayout();
@@ -251,62 +248,7 @@
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(784, 135);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(140, 38);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add....";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(784, 194);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(140, 38);
-            this.btnEdit.TabIndex = 7;
-            this.btnEdit.Text = "Edit....";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(784, 253);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(140, 38);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnViewReport
-            // 
-            this.btnViewReport.Location = new System.Drawing.Point(784, 312);
-            this.btnViewReport.Name = "btnViewReport";
-            this.btnViewReport.Size = new System.Drawing.Size(140, 38);
-            this.btnViewReport.TabIndex = 9;
-            this.btnViewReport.Text = "View Report";
-            this.btnViewReport.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(784, 434);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(140, 38);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Location = new System.Drawing.Point(784, 373);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(140, 38);
-            this.btnSetting.TabIndex = 11;
-            this.btnSetting.Text = "Settings";
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            this.listView.ItemActivate += new System.EventHandler(this.listView_ItemActivate);
             // 
             // chID
             // 
@@ -333,6 +275,36 @@
             this.columnHeader5.Text = "Amount";
             this.columnHeader5.Width = 100;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(784, 135);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(140, 38);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Add....";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(784, 253);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(140, 38);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.Location = new System.Drawing.Point(784, 194);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(140, 38);
+            this.btnSetting.TabIndex = 11;
+            this.btnSetting.Text = "Settings";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -340,9 +312,6 @@
             this.ClientSize = new System.Drawing.Size(936, 604);
             this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnViewReport);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.gbTransactions);
             this.Controls.Add(this.gbFinancialGoals);
@@ -374,9 +343,6 @@
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ComboBox cbMax;
         private System.Windows.Forms.ComboBox cbCategory;
