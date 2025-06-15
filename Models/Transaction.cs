@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PersonalFinanceManager_DesktopApp.Models
 {
-    internal class Transaction
+    public class Transaction
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }

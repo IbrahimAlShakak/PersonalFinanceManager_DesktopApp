@@ -86,11 +86,13 @@ namespace PersonalFinanceManager_DesktopApp
         {
             int FinancialGoal = 100000;
             float income = GetIncome();
+            float expenses = GetExpenses();
+            float balance = income - expenses;
 
             progressBar.Maximum = FinancialGoal;
-            progressBar.Value = (int) income;
+            progressBar.Value = (int)balance;
 
-            lblProgressBar.Text = $"${income} / ${FinancialGoal}";
+            lblProgressBar.Text = $"${balance} / ${FinancialGoal}";
 
         }
         private void GetFilteredTransaction()
@@ -117,8 +119,17 @@ namespace PersonalFinanceManager_DesktopApp
 
         private void AddNewTransaction()
         {
-            AddTransactionForm addTransactionForm = new AddTransactionForm();
-            addTransactionForm.ShowDialog();
+            int lastId = Transactions.Any() ? Transactions.Max(t => t.Id) : 0;
+            AddTransactionForm addTransactionForm = new AddTransactionForm(lastId+1);
+            if (addTransactionForm.ShowDialog() == DialogResult.OK)
+            {
+                Transaction NewTransaction = addTransactionForm.NewTransaction;
+                Transactions.Add(NewTransaction);
+                SaveTransactions();
+                LoadTransactions();
+                UpdateDashboard();
+                UpdateFinancialGolas();
+            }
         }
         public MainForm()
         {
