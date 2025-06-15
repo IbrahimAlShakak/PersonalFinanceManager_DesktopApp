@@ -18,16 +18,16 @@ A simple and intuitive desktop application built using C# and Windows Forms to m
 ## 🖼️ Screenshots
 
 ### 📋 Main Dashboard
-![Main Form Screenshot](screenshots/mainform.png)
+![Main Form Screenshot](mainform.png)
 
 ### ➕ Add Transaction
-![Add Transaction Screenshot](screenshots/addtransaction.png)
+![Add Transaction Screenshot](addtransaction.png)
 
 ### ⚙️ Settings Form
-![Settings Form Screenshot](screenshots/settings.png)
+![Settings Form Screenshot](settings.png)
 
 ### ✏️ Edit/Delete Transaction
-![Edit or Delete Screenshot](screenshots/editdelete.png)
+![Edit or Delete Screenshot](editdelete.png)
 
 > Replace the image links above with your actual screenshot filenames in the `screenshots/` folder of your repo.
 
@@ -83,13 +83,6 @@ PersonalFinanceManager_DesktopApp/
 ## 📃 License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙋‍♂️ Author
-
-**Your Name**  
-[Your GitHub Profile](https://github.com/your-username)
 
 ---
 
