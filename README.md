@@ -18,18 +18,16 @@ A simple and intuitive desktop application built using C# and Windows Forms to m
 ## 🖼️ Screenshots
 
 ### 📋 Main Dashboard
-![Main Form Screenshot](mainform.png)
+![Main Form Screenshot](screenshots/mainform.png)
 
 ### ➕ Add Transaction
-![Add Transaction Screenshot](addtransaction.png)
+![Add Transaction Screenshot](screenshots/addtransactionform.png)
 
 ### ⚙️ Settings Form
-![Settings Form Screenshot](settings.png)
+![Settings Form Screenshot](screenshots/settingsform.png)
 
 ### ✏️ Edit/Delete Transaction
-![Edit or Delete Screenshot](editdelete.png)
-
-> Replace the image links above with your actual screenshot filenames in the `screenshots/` folder of your repo.
+![Edit or Delete Screenshot](screenshots/editordeleteform.png)
 
 ---
 
@@ -71,8 +69,11 @@ PersonalFinanceManager_DesktopApp/
 │   └── SettingForm.cs
 ├── Models/
 │   └── Transaction.cs
-├── Helpers/
-│   └── FileHandler.cs (optional if added)
+├── screenshots/
+│   ├── mainform.png
+│   ├── addtransaction.png
+│   ├── settings.png
+│   └── editdelete.png
 ├── transactions_sample.json
 ├── Program.cs
 └── README.md
