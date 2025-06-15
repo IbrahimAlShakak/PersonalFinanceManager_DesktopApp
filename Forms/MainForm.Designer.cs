@@ -153,7 +153,13 @@
             // 
             this.cbMax.FormattingEnabled = true;
             this.cbMax.Items.AddRange(new object[] {
+            "-50",
+            "-100",
+            "-250",
+            "-500",
+            "-1000",
             "None",
+            "0",
             "50",
             "100",
             "250",
@@ -190,7 +196,13 @@
             // 
             this.cbMin.FormattingEnabled = true;
             this.cbMin.Items.AddRange(new object[] {
+            "-50",
+            "-100",
+            "-250",
+            "-500",
+            "-1000",
             "None",
+            "0",
             "50",
             "100",
             "250",
